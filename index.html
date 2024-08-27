@@ -16,7 +16,6 @@
       src: url("https://itzfizzdigital.b-cdn.net/UniteaSans-Regular.ttf");
     }
 
-
     * {
       box-sizing: border-box;
       padding: 0;
@@ -54,6 +53,8 @@
       margin: 0;
       font-family: "Hempa Sans" !important;
       overflow-x: hidden !important;
+      z-index: 50 !important;
+      position: relative;
       transition: all cubic-bezier(0.19, 1, 0.2, 1) 2000ms;
 
     }
@@ -419,6 +420,7 @@ margin-bottom: 2vh !important;
         position: absolute;
       }
     }
+    
     .web {
       position: absolute;
       bottom: 0;
@@ -455,6 +457,8 @@ margin-bottom: 2vh !important;
       border: 3px solid black;
       width: 625px !important;
       border-radius: 42px;
+      z-index: 9999 !important;
+
     }
     .tiles {
       cursor: none;
@@ -483,6 +487,7 @@ margin-bottom: 2vh !important;
     }
     .activetile {
       opacity: 1;
+      z-index: 9999 !important;
     }
     
     .cursor {
@@ -491,14 +496,15 @@ margin-bottom: 2vh !important;
       width: var(--size);
       border-radius: 50%;
       position: absolute;
-      z-index: 1;
       transform: translate(-50%, -50%) rotate(8deg);
-      pointer-events: none;
+
     }
     .cursor.cursor-shadow {
       transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s,
         background-color 0.2s, border-color 0.2s;
       transition-timing-function: ease-out;
+      z-index: 9999 !important;
+
     }
     
     .cursor.cursor-dot.activetile-1,
@@ -518,6 +524,7 @@ margin-bottom: 2vh !important;
     .cursor.cursor-dot.activetile-15,
     cursor.cursor-dot.activetile-16 {
       opacity: 0;
+
     }
     .cursor-shadow.activetile-1,
     .cursor-shadow.activetile-2,
@@ -542,13 +549,15 @@ margin-bottom: 2vh !important;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 20px;
-      z-index: 1;
+      z-index: 9999 !important;
     }
     .cursor-shadow.activetile-1 {
       background-image: url("https://itzfizzdigital.b-cdn.net/homepage%20assets/Group%201000002825.png");
+
     }
     .cursor-shadow.activetile-2 {
       background-image: url("https://itzfizzdigital.b-cdn.net/homepage%20assets/Group%201000002826.png");
+
     }
     .cursor-shadow.activetile-3 {
       background-image: url("https://itzfizzdigital.b-cdn.net/homepage%20assets/Group%201000002829.png");
@@ -601,7 +610,7 @@ margin-bottom: 2vh !important;
       padding-bottom: 100px;
     }
     .homepagesection5-desc {
-      position: sticky;
+      position: sticky !important;
       top: 0;
       overflow: hidden;
       display: flex;
@@ -640,67 +649,67 @@ margin-bottom: 2vh !important;
     }
     
     .homepagesection5-cards #card_1 {
-      --index: 1;
+      --index: 1 !important;
       transform: rotate(2deg);
     }
     
     .homepagesection5-cards #card_2 {
-      --index: 2;
+      --index: 2 !important;
       transform: rotate(-2deg);
     }
     
     .homepagesection5-cards #card_3 {
-      --index: 3;
+      --index: 3 !important;
       transform: rotate(3deg);
     }
     
     .homepagesection5-cards #card_4 {
-      --index: 4;
+      --index: 4 !important;
       transform: rotate(-3deg);
     }
     .homepagesection5-cards #card_5 {
-      --index: 5;
+      --index: 5 !important;
       transform: rotate(2deg);
     }
     
     .homepagesection5-cards #card_6 {
-      --index: 6;
+      --index: 6 !important;
       transform: rotate(-2deg);
     }
     
     .homepagesection5-cards #card_7 {
-      --index: 7;
+      --index: 7 !important;
       transform: rotate(3deg);
     }
     
     .homepagesection5-cards #card_8 {
-      --index: 8;
+      --index: 8 !important;
       transform: rotate(-3deg);
     }
     .homepagesection5-cards #card_9 {
-      --index: 9;
+      --index: 9 !important;
       transform: rotate(2deg);
     }
     
     .homepagesection5-cards #card_10 {
-      --index: 10;
+      --index: 10 !important;
       transform: rotate(-2deg);
     }
     
     .homepagesection5-cards #card_11 {
-      --index: 11;
+      --index: 11 !important;
       transform: rotate(3deg);
     }
     .homepagesection5-cards #card_12 {
-      --index: 10;
+      --index: 10 !important;
       transform: rotate(-2deg);
     }
     .homepagesection5-cards #card_13 {
-      --index: 11;
+      --index: 11 !important;
       transform: rotate(3deg);
     }
     .homepagesection5-cards .card {
-      position: sticky;
+      position: sticky !important;
       top: 100px;
       padding-top: calc(var(--index) * var(--card-top-offset));
     }
@@ -1088,7 +1097,8 @@ margin-bottom: 2vh !important;
       .cursor-shadow.activetile-14,
       .cursor-shadow.activetile-15,
       .cursor-shadow.activetile-16 {
-        --size: 100px;
+      z-index: 9999 !important;
+      --size: 100px;
       }
       /* section 5 */
     
@@ -1332,6 +1342,8 @@ margin-bottom: 2vh !important;
       .cursor-shadow.activetile-15,
       .cursor-shadow.activetile-16 {
         --size: 100px;
+      z-index: 9999 !important;
+
       }
       /* section 5 */
     
@@ -2022,20 +2034,22 @@ margin-bottom: 2vh !important;
 
 const scroll = new LocomotiveScroll({
             el: document.querySelector('.scroll-container'),
-            smooth: true
+            smooth: true,
+            getDirection: true
         });
 
 gsap.registerPlugin(ScrollTrigger);
 
         ScrollTrigger.scrollerProxy(".scroll-container", {
             scrollTop(value) {
-                return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+                return arguments.length ? scroll.scrollTo(value, 10, 0) : scroll.scroll.instance.scroll.y;
             },
             getBoundingClientRect() {
-                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+                return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight,zIndex:1};
             },
-            pinType: document.querySelector(".scroll-container").style.transform ? "transform" : "fixed"
+            pinType: document.querySelector(".scroll-container").style.transform ? "transform" : "none"
         });
+      
 
         ScrollTrigger.addEventListener("refresh", () => scroll.update());
         ScrollTrigger.refresh();
@@ -2064,7 +2078,7 @@ gsap.registerPlugin(ScrollTrigger);
         start: "top 90%",
         end: "top 20%",
         scrub: 3,
-        markers: true
+        // markers: true
       },
     });
     gsap.to(".page-2", {
@@ -2115,7 +2129,8 @@ gsap.registerPlugin(ScrollTrigger);
         start: "top 0%",
         scrub: 3,
         // pin:'.section',
-        end: "+=2000px",
+        // end: "+=2000px",
+        end: "bottom 50%",
       },
     });
     
@@ -2127,7 +2142,8 @@ gsap.registerPlugin(ScrollTrigger);
         start: "top -7.5%",
         scrub: 3,
         pin: ".homepagesection2 ",
-        end: "+=3000px",
+        // end: "+=3000px",
+        end: "bottom 40%",
       },
     });
     gsap.to(".mobile-animation-cards", {
@@ -2159,39 +2175,77 @@ gsap.registerPlugin(ScrollTrigger);
     
     // HOMEPAGESECTION 3
     
+    // document.addEventListener("mousemove", function (e) {
+    //   var cursor = document.querySelector(".cursor");
+    //   cursor.style.left = e.pageX + "px";
+    //   cursor.style.top = e.pageY + "px";
+    // });
+    
+    // document.querySelectorAll(".cursor-link").forEach(function (link) {
+    //   link.addEventListener("mouseenter", function () {
+    //     document.querySelector(".cursor").classList.add("active");
+    //   });
+    //   link.addEventListener("mouseleave", function () {
+    //     document.querySelector(".cursor").classList.remove("active");
+    //   });
+    // });
+    
+    
+    
+    // for (let i = 1; i <= 16; i++) {
+    //   let tile = document.querySelector(`.tile${i}`);
+    
+    //   tile.addEventListener("mouseenter", function () {
+    //     let cursor = document.querySelector(".cursor");
+    //     cursor.classList.add(`activetile-${i}`);
+    //     tile.classList.add("activetile");
+    //   });
+    
+    //   tile.addEventListener("mouseleave", function () {
+    //     let cursor = document.querySelector(".cursor");
+    //     cursor.classList.remove(`activetile-${i}`);
+    //     tile.classList.remove("activetile");
+        
+    //   });
+    // }
+    
     document.addEventListener("mousemove", function (e) {
-      var cursor = document.querySelector(".cursor");
-      cursor.style.left = e.pageX + "px";
-      cursor.style.top = e.pageY + "px";
+    var cursor = document.querySelector(".cursor");
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+});
+
+document.querySelectorAll(".cursor-link").forEach(function (link) {
+    link.addEventListener("mouseenter", function () {
+        var cursor = document.querySelector(".cursor");
+        cursor.classList.add("active");
+        cursor.style.zIndex = "10000"; // Add z-index when cursor is active
     });
-    
-    document.querySelectorAll(".cursor-link").forEach(function (link) {
-      link.addEventListener("mouseenter", function () {
-        document.querySelector(".cursor").classList.add("active");
-      });
-      link.addEventListener("mouseleave", function () {
-        document.querySelector(".cursor").classList.remove("active");
-      });
+    link.addEventListener("mouseleave", function () {
+        var cursor = document.querySelector(".cursor");
+        cursor.classList.remove("active");
+        cursor.style.zIndex = ""; // Reset z-index when cursor is not active
     });
-    
-    
-    
-    for (let i = 1; i <= 16; i++) {
-      let tile = document.querySelector(`.tile${i}`);
-    
-      tile.addEventListener("mouseenter", function () {
+});
+
+for (let i = 1; i <= 16; i++) {
+    let tile = document.querySelector(`.tile${i}`);
+
+    tile.addEventListener("mouseenter", function () {
         let cursor = document.querySelector(".cursor");
         cursor.classList.add(`activetile-${i}`);
+        cursor.style.zIndex = "10000"; // Add z-index when tile is hovered
         tile.classList.add("activetile");
-      });
-    
-      tile.addEventListener("mouseleave", function () {
+    });
+
+    tile.addEventListener("mouseleave", function () {
         let cursor = document.querySelector(".cursor");
         cursor.classList.remove(`activetile-${i}`);
+        cursor.style.zIndex = ""; // Reset z-index when tile is not hovered
         tile.classList.remove("activetile");
-      });
-    }
-    
+    });
+}
+
     /*;-------------------------------------------------
                         GSAP
     -------------------------------------------------;*/
